@@ -1,0 +1,29 @@
+div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+table {
+  width: 70%;
+  border:  solid grey 1px;
+}
+
+.actions-buttons button{
+  margin-left: 10px;
+}
+
+.actions-buttons{
+  width: 25%;
+}
+
+.buttons-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+mat-form-field{
+  width: 30rem !important;
+}

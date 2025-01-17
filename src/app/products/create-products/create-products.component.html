@@ -1,0 +1,22 @@
+<h1>Crear Producto</h1>
+<form (ngSubmit)="newProduct()" #form="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre del Producto</mat-label>
+    <input matInput name="nombre" [(ngModel)]="newProducts.nombre" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Precio</mat-label>
+    <input matInput name="precio" type="number" [(ngModel)]="newProducts.precio" required />
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" type="submit" (click)="closeDialog()">
+      Cerrar
+    </button>
+    <button mat-raised-button color="primary" type="submit" >
+      Guardar
+    </button>
+  </div>
+</form>
+
