@@ -16,7 +16,7 @@ export class ListProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProducts()
+    this.getProducts();
   }
 
   getProducts(): void {

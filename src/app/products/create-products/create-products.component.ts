@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ProductsService} from "../products.service";
 import {Product} from "../product";
-import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-create-products',
   templateUrl: './create-products.component.html',
   styleUrls: ['./create-products.component.scss']
 })
-export class CreateProductsComponent implements OnInit {
+export class CreateProductsComponent {
 
   newProducts:Product = {
       id:undefined,
@@ -16,11 +15,7 @@ export class CreateProductsComponent implements OnInit {
       precio: 0
   }
 
-  constructor(private productService:ProductsService,private dialogRef: MatDialogRef<CreateProductsComponent>) { }
-
-  ngOnInit(): void {
-      this.productService.createProducts(this.newProducts);
-  }
+  constructor(private productService:ProductsService) { }
 
   /*updateProduct(){
     const productUpdate:Product = {id: 3, nombre:'Producto Actualizado', precio:'3500'}
@@ -36,10 +31,6 @@ export class CreateProductsComponent implements OnInit {
         precio:0,
       };
     })
-  }
-
-  closeDialog(): void {
-    this.dialogRef.close();
   }
 
 }

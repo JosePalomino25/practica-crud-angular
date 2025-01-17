@@ -3,7 +3,7 @@ import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Product} from "./product";
 import {Observable} from "rxjs";
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {MatDialog} from "@angular/material/dialog";
 import {CreateProductsComponent} from "./create-products/create-products.component";
 
 @Injectable({
@@ -12,7 +12,6 @@ import {CreateProductsComponent} from "./create-products/create-products.compone
 export class ProductsService {
 
   private apiUrl=  environment.apiURL;
-  products!:Product[]
 
   constructor(private http: HttpClient, public dialog: MatDialog) { }
 
@@ -37,11 +36,8 @@ export class ProductsService {
   }
 
   openDialog(): void {
-    const dialogRef: MatDialogRef<CreateProductsComponent> = this.dialog.open(CreateProductsComponent, {
+    this.dialog.open(CreateProductsComponent, {
       width: '250px',
     });
-    dialogRef.afterClosed().subscribe()
   }
-
-
 }
